@@ -1,0 +1,36 @@
+name: Check links
+
+# Checks the hand-entered links (Tennessee details and statewide programs).
+# The ~6,000 federal links are refreshed from IPEDS automatically instead.
+on:
+  schedule:
+    - cron: "0 13 * * 1"   # Mondays, 8am Central
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  issues: write
+
+jobs:
+  links:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Check links
+        id: lychee
+        uses: lycheeverse/lychee-action@v2
+        with:
+          args: >-
+            --no-progress
+            --max-concurrency 4
+            --exclude "google\.com/search"
+            --exclude "fonts\.(googleapis|gstatic)\.com"
+            data/tn-overlay.json site-config.js
+          fail: false
+      - name: Open an issue if links are broken
+        if: steps.lychee.outputs.exit_code != 0
+        uses: peter-evans/create-issue-from-file@v5
+        with:
+          title: Broken links found
+          content-filepath: ./lychee/out.md
+          labels: broken-links
