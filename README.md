@@ -55,12 +55,16 @@ Update `site-config.js` each August with the new TN Promise deadline, key dates 
 
 ## Troubleshooting
 
-**The workflow says it "could not download new college data."** The federal download site (nces.ed.gov) is sometimes slow or blocks automated downloads. The site still publishes with the last saved data. Two fixes:
+Every build writes a **Data build report**. To read it, open the **Actions** tab, click the newest **Build data and publish site** run, and scroll down the Summary page. It says which source was used, or exactly why each one failed.
 
-- **Upload the files yourself.** Go to the IPEDS Complete Data Files page (https://nces.ed.gov/ipeds/datacenter/DataFiles.aspx), pick the latest year, and download three zips: `HD20xx` (Directory information), `IC20xx` (Institutional characteristics) and `IC20xx_AY` (Student charges). Create a `data/raw/` folder in the repo, upload the three zips there, and run the workflow again. The build uses local files before trying to download.
-- **Use the College Scorecard instead.** Get a free key at https://api.data.gov/signup/, then add it under **Settings → Secrets and variables → Actions → New repository secret** with the name `SCORECARD_API_KEY`. The build falls back to the Scorecard when IPEDS can't be reached. Scorecard data doesn't include application fees or application links, so those buttons fall back to site searches.
+The build tries these sources in order and uses the first that works:
 
-**The page shows "Showing Tennessee schools only."** The national build hasn't succeeded yet. Check the Actions tab for the latest run.
+1. **IPEDS files you uploaded.** Put `HD20xx`, `IC20xx` and `IC20xx_AY` from https://nces.ed.gov/ipeds/datacenter/DataFiles.aspx anywhere in the repo. Zipped or unzipped both work, and names like `HD2024 (1).zip` are fine.
+2. **IPEDS download** from nces.ed.gov.
+3. **Urban Institute Education Data API**, a free copy of IPEDS that needs no key.
+4. **College Scorecard API**, if a `SCORECARD_API_KEY` repository secret is set.
+
+If none work, the site still publishes with the last saved list and the page says "Showing Tennessee schools only."
 
 **Testing on your own computer:** double-click `index.html`. To rebuild data locally, run `python3 scripts/build_data.py` (needs internet) or `python3 scripts/build_data.py --tn-only`.
 

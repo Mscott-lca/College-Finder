@@ -1,0 +1,854 @@
+{
+  "updated": "2026-10-20",
+  "note": "Hand-checked Tennessee details layered on top of the federal data. Edit freely; see README.",
+  "schools": [
+    {
+      "name": "University of Tennessee, Knoxville",
+      "short": "UTK",
+      "type": "public",
+      "region": "East",
+      "city": "Knoxville",
+      "domain": "utk.edu",
+      "apply": "https://admissions.utk.edu/undergraduate-application/first-year-student/",
+      "scholarships": "https://onestop.utk.edu/scholarships-financial-aid/scholarships/",
+      "fee": "toolkit2025",
+      "freeApp": "Listed in THEC's Sept. 2025 fee-waiver toolkit. Need-based waivers (UT form, Common App, ACT, College Board, NACAC) accepted year-round.",
+      "dates": [
+        [
+          "2026-11-01",
+          "Early Action, for the most scholarship money"
+        ],
+        [
+          "2027-01-05",
+          "In-state scholarship consideration"
+        ]
+      ],
+      "notes": "Your admission application is your merit scholarship application. Tri-Star scholarships for TN residents also need the FAFSA by UT's priority date."
+    },
+    {
+      "name": "University of Tennessee at Chattanooga",
+      "short": "UTC",
+      "type": "public",
+      "region": "East",
+      "city": "Chattanooga",
+      "domain": "utc.edu",
+      "apply": "https://www.utc.edu/apply",
+      "da": true,
+      "fee": "sept2026",
+      "freeApp": "Free App Week was Sept. 14–18, 2026 (code FREEAPP27, UTC portal only, not Common App). Standard fee $30. Expect another in Sept. 2027.",
+      "notes": "Direct Admissions participant."
+    },
+    {
+      "name": "University of Tennessee at Martin",
+      "short": "UTM",
+      "type": "public",
+      "region": "West",
+      "city": "Martin",
+      "domain": "utm.edu",
+      "da": true,
+      "fee": "toolkit2025",
+      "freeApp": "Listed in THEC's Sept. 2025 fee-waiver toolkit.",
+      "notes": "Direct Admissions participant."
+    },
+    {
+      "name": "University of Tennessee Southern",
+      "short": "UT Southern",
+      "type": "public",
+      "region": "Middle",
+      "city": "Pulaski",
+      "domain": "utsouthern.edu",
+      "da": true,
+      "promise": true,
+      "fee": "toolkit2025",
+      "freeApp": "Listed in THEC's Sept. 2025 fee-waiver toolkit.",
+      "notes": "Direct Admissions participant."
+    },
+    {
+      "name": "University of Tennessee Health Science Center",
+      "short": "UTHSC",
+      "type": "health",
+      "region": "West",
+      "city": "Memphis",
+      "domain": "uthsc.edu",
+      "scholarships": "https://uthsc.academicworks.com/",
+      "notes": "Graduate and professional health programs (medicine, pharmacy, dentistry, nursing and more). Not a first-year undergraduate option.",
+      "sector": 1
+    },
+    {
+      "name": "University of Memphis",
+      "short": "UofM",
+      "type": "public",
+      "region": "West",
+      "city": "Memphis",
+      "domain": "memphis.edu",
+      "da": true,
+      "scholarships": "https://memphis.academicworks.com/",
+      "fee": "toolkit2025",
+      "freeApp": "Listed in THEC's Sept. 2025 fee-waiver toolkit.",
+      "notes": "Direct Admissions participant. Scholarships run through the AcademicWorks portal."
+    },
+    {
+      "name": "Middle Tennessee State University",
+      "short": "MTSU",
+      "type": "public",
+      "region": "Middle",
+      "city": "Murfreesboro",
+      "domain": "mtsu.edu",
+      "da": true,
+      "apply": "https://www.mtsu.edu/how-to-apply/",
+      "scholarships": "https://www.mtsu.edu/financial-aid/incoming-freshmen/",
+      "fee": "toolkit2025",
+      "freeApp": "Listed in THEC's Sept. 2025 fee-waiver toolkit.",
+      "dates": [
+        [
+          "2026-12-01",
+          "Complete admission file for guaranteed scholarships"
+        ],
+        [
+          "2027-03-01",
+          "General scholarship application closes"
+        ]
+      ],
+      "notes": "Guaranteed merit scholarships need no separate application, just a complete admission file (application, fee or waiver, test score) by Dec. 1."
+    },
+    {
+      "name": "East Tennessee State University",
+      "short": "ETSU",
+      "type": "public",
+      "region": "East",
+      "city": "Johnson City",
+      "domain": "etsu.edu",
+      "da": true,
+      "apply": "https://www.etsu.edu/admissions/apply/",
+      "scholarships": "https://www.etsu.edu/financial-aid-and-scholarships/scholarships/",
+      "fee": "sept2026",
+      "freeApp": "Free for TN residents Sept. 1–30, 2026 (code TNFreeApp27, now closed). Standard fee $25. Expect a repeat in Sept. 2027.",
+      "dates": [
+        [
+          "2027-03-01",
+          "General University Scholarship Application closes"
+        ]
+      ],
+      "notes": "One General University Scholarship Application (Oct. 1 – Mar. 1) covers many endowed awards. Academic Performance Scholarship (APS) for TN residents is based on GPA + ACT/SAT."
+    },
+    {
+      "name": "Tennessee Technological University",
+      "short": "Tennessee Tech",
+      "type": "public",
+      "region": "Middle",
+      "city": "Cookeville",
+      "domain": "tntech.edu",
+      "scholarships": "https://www.tntech.edu/scholarships/index.php",
+      "fee": "toolkit2025",
+      "freeApp": "Listed in THEC's Sept. 2025 fee-waiver toolkit.",
+      "dates": [
+        [
+          "2026-12-15",
+          "Scholarship application deadline (2027–28)"
+        ]
+      ],
+      "notes": "One central scholarship application puts you in the running for hundreds of awards."
+    },
+    {
+      "name": "Austin Peay State University",
+      "short": "APSU",
+      "type": "public",
+      "region": "Middle",
+      "city": "Clarksville",
+      "domain": "apsu.edu",
+      "da": true,
+      "fee": "toolkit2025",
+      "freeApp": "Listed in THEC's Sept. 2025 fee-waiver toolkit.",
+      "notes": "Direct Admissions participant."
+    },
+    {
+      "name": "Tennessee State University",
+      "short": "TSU",
+      "type": "public",
+      "region": "Middle",
+      "city": "Nashville",
+      "domain": "tnstate.edu",
+      "da": true,
+      "hbcu": true,
+      "scholarships": "https://tnstate.academicworks.com/",
+      "fee": "toolkit2025",
+      "freeApp": "Listed in THEC's Sept. 2025 fee-waiver toolkit.",
+      "notes": "Scholarship applications open Oct. 1 each year; you must be admitted first."
+    },
+    {
+      "name": "Chattanooga State Community College",
+      "type": "cc",
+      "region": "East",
+      "city": "Chattanooga",
+      "domain": "chattanoogastate.edu",
+      "da": true,
+      "promise": true,
+      "fee": "none",
+      "scholarships": "https://www.chattanoogastate.edu/scholarships/tn-promise-scholarship",
+      "freeApp": "No application fee."
+    },
+    {
+      "name": "Cleveland State Community College",
+      "type": "cc",
+      "region": "East",
+      "city": "Cleveland",
+      "domain": "clevelandstatecc.edu",
+      "da": true,
+      "promise": true,
+      "fee": "none",
+      "freeApp": "No application fee."
+    },
+    {
+      "name": "Columbia State Community College",
+      "type": "cc",
+      "region": "Middle",
+      "city": "Columbia",
+      "domain": "columbiastate.edu",
+      "da": true,
+      "promise": true,
+      "fee": "none",
+      "freeApp": "No application fee."
+    },
+    {
+      "name": "Dyersburg State Community College",
+      "type": "cc",
+      "region": "West",
+      "city": "Dyersburg",
+      "domain": "dscc.edu",
+      "da": true,
+      "promise": true,
+      "fee": "none",
+      "scholarships": "https://www.dscc.edu/financial-aid/tennessee-promise/",
+      "freeApp": "No application fee."
+    },
+    {
+      "name": "Jackson State Community College",
+      "type": "cc",
+      "region": "West",
+      "city": "Jackson",
+      "domain": "jscc.edu",
+      "da": true,
+      "promise": true,
+      "fee": "none",
+      "freeApp": "No application fee."
+    },
+    {
+      "name": "Motlow State Community College",
+      "type": "cc",
+      "region": "Middle",
+      "city": "Lynchburg / Tullahoma",
+      "domain": "mscc.edu",
+      "da": true,
+      "promise": true,
+      "fee": "none",
+      "freeApp": "No application fee."
+    },
+    {
+      "name": "Nashville State Community College",
+      "type": "cc",
+      "region": "Middle",
+      "city": "Nashville",
+      "domain": "nscc.edu",
+      "da": true,
+      "promise": true,
+      "fee": "none",
+      "freeApp": "No application fee."
+    },
+    {
+      "name": "Northeast State Community College",
+      "type": "cc",
+      "region": "East",
+      "city": "Blountville",
+      "domain": "northeaststate.edu",
+      "da": true,
+      "promise": true,
+      "fee": "none",
+      "freeApp": "No application fee."
+    },
+    {
+      "name": "Pellissippi State Community College",
+      "type": "cc",
+      "region": "East",
+      "city": "Knoxville",
+      "domain": "pstcc.edu",
+      "da": true,
+      "promise": true,
+      "fee": "none",
+      "freeApp": "No application fee."
+    },
+    {
+      "name": "Roane State Community College",
+      "type": "cc",
+      "region": "East",
+      "city": "Harriman",
+      "domain": "roanestate.edu",
+      "da": true,
+      "promise": true,
+      "fee": "none",
+      "freeApp": "No application fee."
+    },
+    {
+      "name": "Southwest Tennessee Community College",
+      "type": "cc",
+      "region": "West",
+      "city": "Memphis",
+      "domain": "southwest.tn.edu",
+      "da": true,
+      "promise": true,
+      "fee": "none",
+      "freeApp": "No application fee."
+    },
+    {
+      "name": "Volunteer State Community College",
+      "type": "cc",
+      "region": "Middle",
+      "city": "Gallatin",
+      "domain": "volstate.edu",
+      "da": true,
+      "promise": true,
+      "fee": "none",
+      "freeApp": "No application fee."
+    },
+    {
+      "name": "Walters State Community College",
+      "type": "cc",
+      "region": "East",
+      "city": "Morristown",
+      "domain": "ws.edu",
+      "da": true,
+      "promise": true,
+      "fee": "none",
+      "freeApp": "No application fee."
+    },
+    {
+      "name": "TCAT Athens",
+      "type": "tcat",
+      "region": "East",
+      "city": "Athens",
+      "domain": "tcatathens.edu",
+      "da": true,
+      "promise": true,
+      "fee": "none",
+      "freeApp": "No application fee."
+    },
+    {
+      "name": "TCAT Chattanooga",
+      "type": "tcat",
+      "region": "East",
+      "city": "Chattanooga",
+      "da": true,
+      "promise": true,
+      "fee": "none",
+      "freeApp": "No application fee.",
+      "notes": "Operated as part of Chattanooga State."
+    },
+    {
+      "name": "TCAT Crump",
+      "type": "tcat",
+      "region": "West",
+      "city": "Crump",
+      "domain": "tcatcrump.edu",
+      "da": true,
+      "promise": true,
+      "fee": "none",
+      "freeApp": "No application fee."
+    },
+    {
+      "name": "TCAT Dickson",
+      "type": "tcat",
+      "region": "Middle",
+      "city": "Dickson",
+      "domain": "tcatdickson.edu",
+      "da": true,
+      "promise": true,
+      "fee": "none",
+      "freeApp": "No application fee."
+    },
+    {
+      "name": "TCAT Elizabethton",
+      "type": "tcat",
+      "region": "East",
+      "city": "Elizabethton",
+      "domain": "tcatelizabethton.edu",
+      "da": true,
+      "promise": true,
+      "fee": "none",
+      "freeApp": "No application fee."
+    },
+    {
+      "name": "TCAT Harriman",
+      "type": "tcat",
+      "region": "East",
+      "city": "Harriman",
+      "domain": "tcatharriman.edu",
+      "da": true,
+      "promise": true,
+      "fee": "none",
+      "freeApp": "No application fee."
+    },
+    {
+      "name": "TCAT Hartsville",
+      "type": "tcat",
+      "region": "Middle",
+      "city": "Hartsville",
+      "domain": "tcathartsville.edu",
+      "da": true,
+      "promise": true,
+      "fee": "none",
+      "freeApp": "No application fee."
+    },
+    {
+      "name": "TCAT Henry/Carroll",
+      "type": "tcat",
+      "region": "West",
+      "city": "Paris",
+      "da": true,
+      "promise": true,
+      "fee": "none",
+      "freeApp": "No application fee."
+    },
+    {
+      "name": "TCAT Hohenwald",
+      "type": "tcat",
+      "region": "Middle",
+      "city": "Hohenwald",
+      "domain": "tcathohenwald.edu",
+      "da": true,
+      "promise": true,
+      "fee": "none",
+      "freeApp": "No application fee."
+    },
+    {
+      "name": "TCAT Jacksboro",
+      "type": "tcat",
+      "region": "East",
+      "city": "Jacksboro",
+      "domain": "tcatjacksboro.edu",
+      "da": true,
+      "promise": true,
+      "fee": "none",
+      "freeApp": "No application fee."
+    },
+    {
+      "name": "TCAT Jackson",
+      "type": "tcat",
+      "region": "West",
+      "city": "Jackson",
+      "domain": "tcatjackson.edu",
+      "da": true,
+      "promise": true,
+      "fee": "none",
+      "freeApp": "No application fee."
+    },
+    {
+      "name": "TCAT Knoxville",
+      "type": "tcat",
+      "region": "East",
+      "city": "Knoxville",
+      "domain": "tcatknoxville.edu",
+      "da": true,
+      "promise": true,
+      "fee": "none",
+      "freeApp": "No application fee."
+    },
+    {
+      "name": "TCAT McMinnville",
+      "type": "tcat",
+      "region": "Middle",
+      "city": "McMinnville",
+      "domain": "tcatmcminnville.edu",
+      "da": true,
+      "promise": true,
+      "fee": "none",
+      "freeApp": "No application fee."
+    },
+    {
+      "name": "TCAT Memphis",
+      "type": "tcat",
+      "region": "West",
+      "city": "Memphis",
+      "domain": "tcatmemphis.edu",
+      "da": true,
+      "promise": true,
+      "fee": "none",
+      "freeApp": "No application fee."
+    },
+    {
+      "name": "TCAT Morristown",
+      "type": "tcat",
+      "region": "East",
+      "city": "Morristown",
+      "domain": "tcatmorristown.edu",
+      "da": true,
+      "promise": true,
+      "fee": "none",
+      "freeApp": "No application fee."
+    },
+    {
+      "name": "TCAT Murfreesboro",
+      "type": "tcat",
+      "region": "Middle",
+      "city": "Murfreesboro",
+      "domain": "tcatmurfreesboro.edu",
+      "da": true,
+      "promise": true,
+      "fee": "none",
+      "freeApp": "No application fee."
+    },
+    {
+      "name": "TCAT Nashville",
+      "type": "tcat",
+      "region": "Middle",
+      "city": "Nashville",
+      "domain": "tcatnashville.edu",
+      "da": true,
+      "promise": true,
+      "fee": "none",
+      "freeApp": "No application fee."
+    },
+    {
+      "name": "TCAT Northwest",
+      "type": "tcat",
+      "region": "West",
+      "city": "Newbern",
+      "da": true,
+      "promise": true,
+      "fee": "none",
+      "freeApp": "No application fee."
+    },
+    {
+      "name": "TCAT Oneida/Huntsville",
+      "type": "tcat",
+      "region": "East",
+      "city": "Huntsville",
+      "da": true,
+      "promise": true,
+      "fee": "none",
+      "freeApp": "No application fee."
+    },
+    {
+      "name": "TCAT Pulaski",
+      "type": "tcat",
+      "region": "Middle",
+      "city": "Pulaski",
+      "domain": "tcatpulaski.edu",
+      "da": true,
+      "promise": true,
+      "fee": "none",
+      "freeApp": "No application fee."
+    },
+    {
+      "name": "TCAT Shelbyville",
+      "type": "tcat",
+      "region": "Middle",
+      "city": "Shelbyville",
+      "domain": "tcatshelbyville.edu",
+      "da": true,
+      "promise": true,
+      "fee": "none",
+      "freeApp": "No application fee."
+    },
+    {
+      "name": "TCAT Upper Cumberland",
+      "type": "tcat",
+      "region": "Middle",
+      "city": "Livingston",
+      "da": true,
+      "promise": true,
+      "fee": "none",
+      "freeApp": "No application fee."
+    },
+    {
+      "name": "William R. Moore College of Technology",
+      "type": "tcat",
+      "region": "West",
+      "city": "Memphis",
+      "da": true,
+      "notes": "Independent technical college (not a TCAT) taking part in Direct Admissions.",
+      "sector": 9
+    },
+    {
+      "name": "American Baptist College",
+      "type": "private",
+      "region": "Middle",
+      "city": "Nashville",
+      "domain": "abcnash.edu",
+      "hbcu": true,
+      "fee": "none",
+      "freeApp": "No application fee (THEC 2025–26 toolkit)."
+    },
+    {
+      "name": "Baptist Health Sciences University",
+      "type": "private",
+      "region": "West",
+      "city": "Memphis",
+      "domain": "bhsu.edu",
+      "notes": "Health-sciences focused (nursing, allied health)."
+    },
+    {
+      "name": "Belmont University",
+      "type": "private",
+      "region": "Middle",
+      "city": "Nashville",
+      "domain": "belmont.edu",
+      "fee": "toolkit2025",
+      "freeApp": "Listed in THEC's Sept. 2025 fee-waiver toolkit."
+    },
+    {
+      "name": "Bethel University",
+      "type": "private",
+      "region": "West",
+      "city": "McKenzie",
+      "domain": "bethelu.edu",
+      "da": true,
+      "notes": "Direct Admissions participant."
+    },
+    {
+      "name": "Bryan College",
+      "type": "private",
+      "region": "East",
+      "city": "Dayton",
+      "domain": "bryan.edu",
+      "da": true,
+      "fee": "toolkit2025",
+      "freeApp": "Listed in THEC's Sept. 2025 fee-waiver toolkit."
+    },
+    {
+      "name": "Carson-Newman University",
+      "type": "private",
+      "region": "East",
+      "city": "Jefferson City",
+      "domain": "cn.edu",
+      "fee": "none",
+      "freeApp": "No application fee (THEC 2025–26 toolkit)."
+    },
+    {
+      "name": "Christian Brothers University",
+      "type": "private",
+      "region": "West",
+      "city": "Memphis",
+      "domain": "cbu.edu",
+      "da": true,
+      "fee": "toolkit2025",
+      "freeApp": "Listed in THEC's Sept. 2025 fee-waiver toolkit."
+    },
+    {
+      "name": "Cumberland University",
+      "type": "private",
+      "region": "Middle",
+      "city": "Lebanon",
+      "domain": "cumberland.edu",
+      "da": true,
+      "fee": "toolkit2025",
+      "freeApp": "Listed in THEC's Sept. 2025 fee-waiver toolkit."
+    },
+    {
+      "name": "Fisk University",
+      "type": "private",
+      "region": "Middle",
+      "city": "Nashville",
+      "domain": "fisk.edu",
+      "da": true,
+      "hbcu": true,
+      "fee": "toolkit2025",
+      "freeApp": "Listed in THEC's Sept. 2025 fee-waiver toolkit."
+    },
+    {
+      "name": "Freed-Hardeman University",
+      "type": "private",
+      "region": "West",
+      "city": "Henderson",
+      "domain": "fhu.edu",
+      "da": true,
+      "fee": "none",
+      "freeApp": "No application fee (THEC 2025–26 toolkit)."
+    },
+    {
+      "name": "Johnson University",
+      "type": "private",
+      "region": "East",
+      "city": "Knoxville",
+      "domain": "johnsonu.edu",
+      "da": true,
+      "fee": "toolkit2025",
+      "freeApp": "Listed in THEC's Sept. 2025 fee-waiver toolkit."
+    },
+    {
+      "name": "King University",
+      "type": "private",
+      "region": "East",
+      "city": "Bristol",
+      "domain": "king.edu",
+      "da": true,
+      "fee": "toolkit2025",
+      "freeApp": "Listed in THEC's Sept. 2025 fee-waiver toolkit."
+    },
+    {
+      "name": "Lane College",
+      "type": "private",
+      "region": "West",
+      "city": "Jackson",
+      "domain": "lanecollege.edu",
+      "da": true,
+      "hbcu": true,
+      "fee": "toolkit2025",
+      "freeApp": "Listed in THEC's Sept. 2025 fee-waiver toolkit."
+    },
+    {
+      "name": "Lee University",
+      "type": "private",
+      "region": "East",
+      "city": "Cleveland",
+      "domain": "leeuniversity.edu",
+      "da": true,
+      "fee": "toolkit2025",
+      "freeApp": "Listed in THEC's Sept. 2025 fee-waiver toolkit."
+    },
+    {
+      "name": "LeMoyne-Owen College",
+      "type": "private",
+      "region": "West",
+      "city": "Memphis",
+      "domain": "loc.edu",
+      "da": true,
+      "hbcu": true,
+      "fee": "toolkit2025",
+      "freeApp": "Listed in THEC's Sept. 2025 fee-waiver toolkit."
+    },
+    {
+      "name": "Lincoln Memorial University",
+      "type": "private",
+      "region": "East",
+      "city": "Harrogate",
+      "domain": "lmunet.edu",
+      "fee": "toolkit2025",
+      "freeApp": "Listed in THEC's Sept. 2025 fee-waiver toolkit."
+    },
+    {
+      "name": "Lipscomb University",
+      "type": "private",
+      "region": "Middle",
+      "city": "Nashville",
+      "domain": "lipscomb.edu",
+      "fee": "toolkit2025",
+      "freeApp": "Listed in THEC's Sept. 2025 fee-waiver toolkit."
+    },
+    {
+      "name": "Maryville College",
+      "type": "private",
+      "region": "East",
+      "city": "Maryville",
+      "domain": "maryvillecollege.edu",
+      "da": true,
+      "fee": "none",
+      "freeApp": "No application fee (THEC 2025–26 toolkit)."
+    },
+    {
+      "name": "Meharry Medical College",
+      "type": "health",
+      "region": "Middle",
+      "city": "Nashville",
+      "domain": "mmc.edu",
+      "hbcu": true,
+      "notes": "Graduate and professional health programs.",
+      "sector": 2
+    },
+    {
+      "name": "Milligan University",
+      "type": "private",
+      "region": "East",
+      "city": "Milligan",
+      "domain": "milligan.edu",
+      "da": true,
+      "fee": "toolkit2025",
+      "freeApp": "Listed in THEC's Sept. 2025 fee-waiver toolkit."
+    },
+    {
+      "name": "Rhodes College",
+      "type": "private",
+      "region": "West",
+      "city": "Memphis",
+      "domain": "rhodes.edu",
+      "fee": "toolkit2025",
+      "freeApp": "Listed in THEC's Sept. 2025 fee-waiver toolkit."
+    },
+    {
+      "name": "Sewanee: The University of the South",
+      "short": "Sewanee",
+      "type": "private",
+      "region": "Middle",
+      "city": "Sewanee",
+      "domain": "sewanee.edu",
+      "fee": "toolkit2025",
+      "freeApp": "Listed in THEC's Sept. 2025 fee-waiver toolkit."
+    },
+    {
+      "name": "Southern Adventist University",
+      "type": "private",
+      "region": "East",
+      "city": "Collegedale",
+      "domain": "southern.edu",
+      "da": true,
+      "notes": "Direct Admissions participant."
+    },
+    {
+      "name": "Tennessee Wesleyan University",
+      "type": "private",
+      "region": "East",
+      "city": "Athens",
+      "domain": "tnwesleyan.edu",
+      "da": true,
+      "fee": "toolkit2025",
+      "freeApp": "Listed in THEC's Sept. 2025 fee-waiver toolkit."
+    },
+    {
+      "name": "Trevecca Nazarene University",
+      "type": "private",
+      "region": "Middle",
+      "city": "Nashville",
+      "domain": "trevecca.edu",
+      "da": true,
+      "fee": "toolkit2025",
+      "freeApp": "Listed in THEC's Sept. 2025 fee-waiver toolkit."
+    },
+    {
+      "name": "Tusculum University",
+      "type": "private",
+      "region": "East",
+      "city": "Greeneville",
+      "domain": "tusculum.edu",
+      "da": true,
+      "fee": "toolkit2025",
+      "freeApp": "Listed in THEC's Sept. 2025 fee-waiver toolkit."
+    },
+    {
+      "name": "Union University",
+      "type": "private",
+      "region": "West",
+      "city": "Jackson",
+      "domain": "uu.edu",
+      "da": true,
+      "fee": "toolkit2025",
+      "freeApp": "Listed in THEC's Sept. 2025 fee-waiver toolkit."
+    },
+    {
+      "name": "Vanderbilt University",
+      "type": "private",
+      "region": "Middle",
+      "city": "Nashville",
+      "domain": "vanderbilt.edu",
+      "fee": "toolkit2025",
+      "freeApp": "Listed in THEC's Sept. 2025 fee-waiver toolkit.",
+      "notes": "Need-based aid through Opportunity Vanderbilt; check the current income thresholds for tuition-free attendance."
+    },
+    {
+      "name": "Welch College",
+      "type": "private",
+      "region": "Middle",
+      "city": "Gallatin",
+      "domain": "welch.edu",
+      "da": true,
+      "notes": "Direct Admissions participant."
+    }
+  ]
+}
