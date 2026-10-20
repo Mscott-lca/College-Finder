@@ -1,0 +1,463 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>College Finder for Tennessee Students: every U.S. college, scholarships and free applications</title>
+<meta name="description" content="Search every U.S. college that takes federal financial aid. Find apply, financial aid and net-price links, application fees, tuition for Tennessee residents, plus Tennessee scholarships, deadlines and free application periods.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎓</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,400;0,600;0,800;1,400&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#F2F4F7; --surface:#FFFFFF; --ink:#18212E; --muted:#556072; --line:#D8DDE5;
+  --iris:#5A3E9E; --iris-soft:#EEE9F8; --pine:#1D7350; --pine-soft:#E3F2EA;
+  --amber:#8A5A00; --amber-soft:#FBF0D9; --past:#9AA3B0;
+  --radius-s:6px; --radius-m:12px;
+  --font:"Public Sans", "Segoe UI", system-ui, -apple-system, Roboto, "Helvetica Neue", Arial, sans-serif;
+  color-scheme: light;
+  box-sizing:border-box;
+  padding-top:env(safe-area-inset-top,0px); padding-bottom:env(safe-area-inset-bottom,0px);
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:#11151C; --surface:#19202A; --ink:#E6E9EF; --muted:#9BA5B4; --line:#2B3442;
+    --iris:#B3A0EE; --iris-soft:#2A2440; --pine:#5CC796; --pine-soft:#173327;
+    --amber:#E8B85A; --amber-soft:#33280F; --past:#5F6878;
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#11151C; --surface:#19202A; --ink:#E6E9EF; --muted:#9BA5B4; --line:#2B3442;
+  --iris:#B3A0EE; --iris-soft:#2A2440; --pine:#5CC796; --pine-soft:#173327;
+  --amber:#E8B85A; --amber-soft:#33280F; --past:#5F6878;
+  color-scheme: dark;
+}
+*,*::before,*::after{box-sizing:inherit}
+html{scroll-padding-top:calc(env(safe-area-inset-top,0px) + 140px)}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--font);font-size:16px;line-height:1.5}
+a{color:var(--iris)}
+a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible{outline:3px solid var(--iris);outline-offset:2px;border-radius:4px}
+.wrap{max-width:1080px;margin:0 auto;padding:0 20px}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+
+header.top{padding:40px 0 8px}
+h1{font-size:clamp(2rem,5vw,3.1rem);line-height:1.05;font-weight:800;letter-spacing:-.02em;margin:0 0 10px;max-width:18ch}
+.lede{color:var(--muted);max-width:64ch;margin:0 0 4px;font-size:1.05rem}
+
+.rail-head{display:flex;justify-content:space-between;align-items:baseline;gap:12px;margin:28px 0 10px;flex-wrap:wrap}
+.rail-head h2{font-size:1.1rem;margin:0}
+.rail-head span{color:var(--muted);font-size:.9rem}
+.rail{display:flex;overflow-x:auto;scroll-snap-type:x proximity;padding:4px 2px 14px;margin:0;list-style:none}
+.rail li{scroll-snap-align:start;flex:0 0 220px;position:relative;padding:18px 18px 0 0}
+.rail li::before{content:"";position:absolute;top:6px;left:0;right:0;height:3px;background:var(--line)}
+.rail li::after{content:"";position:absolute;top:1px;left:0;width:13px;height:13px;border-radius:50%;background:var(--surface);border:3px solid var(--iris)}
+.rail li.past::after{border-color:var(--past)}
+.rail li.next::after{background:var(--iris)}
+.rail a{display:block;text-decoration:none;color:inherit}
+.rail .when{font-weight:800;font-size:1.02rem}
+.rail .count{display:inline-block;font-size:.8rem;font-weight:600;color:var(--amber);background:var(--amber-soft);border-radius:var(--radius-s);padding:1px 7px;margin-left:6px;vertical-align:2px}
+.rail .past .count{color:var(--past);background:transparent;padding:0}
+.rail .what{font-weight:600;margin-top:2px}
+.rail .detail{color:var(--muted);font-size:.86rem;margin-top:2px}
+.rail li.past .when,.rail li.past .what{color:var(--past)}
+.rail a:hover .what{text-decoration:underline}
+
+.status{background:var(--pine-soft);border-left:5px solid var(--pine);border-radius:0 var(--radius-m) var(--radius-m) 0;padding:14px 18px;margin:8px 0 0;max-width:780px}
+.status strong{color:var(--pine)}
+.status p{margin:0}
+.status p+p{margin-top:6px}
+.notice{background:var(--amber-soft);border-left:5px solid var(--amber);border-radius:0 var(--radius-m) var(--radius-m) 0;padding:12px 18px;margin:12px 0 0;max-width:780px}
+.notice p{margin:0}
+
+.controls{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:var(--bg);padding:16px 0 12px;margin-top:24px;border-bottom:1px solid var(--line)}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:10;background:var(--bg)}
+.searchrow{display:flex;gap:10px;flex-wrap:wrap}
+.search{flex:1 1 300px}
+.search input{width:100%;font:inherit;font-size:1.05rem;padding:12px 14px;border:2px solid var(--line);border-radius:var(--radius-m);background:var(--surface);color:var(--ink)}
+.search input:focus{border-color:var(--iris);outline:none}
+select{font:inherit;padding:11px 12px;border:2px solid var(--line);border-radius:var(--radius-m);background:var(--surface);color:var(--ink);max-width:100%}
+.types{display:flex;gap:6px;flex-wrap:wrap;margin-top:10px}
+.types button{font:inherit;font-size:.9rem;padding:6px 12px;border-radius:999px;border:1px solid var(--line);background:var(--surface);color:var(--ink);cursor:pointer}
+.types button[aria-pressed="true"]{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+.toggles{display:flex;gap:8px 16px;flex-wrap:wrap;margin-top:10px;font-size:.92rem}
+.toggles label{display:flex;align-items:center;gap:6px;cursor:pointer}
+.toggles input{width:17px;height:17px;accent-color:var(--iris)}
+.toggles .tn{color:var(--muted)}
+.resultbar{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap;margin:14px 0 4px}
+.resultcount{color:var(--muted);font-size:.9rem;margin:0}
+.resultbar select{padding:6px 10px;font-size:.9rem;border-width:1px}
+
+.list{list-style:none;margin:0;padding:0}
+.school{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius-m);padding:16px 18px;margin:10px 0;display:grid;grid-template-columns:minmax(0,1fr) 230px;gap:6px 24px}
+.school h3{font-size:1.12rem;margin:0;line-height:1.25}
+.meta{color:var(--muted);font-size:.9rem;margin-top:2px}
+.meta a{color:var(--muted)}
+.badges{display:flex;flex-wrap:wrap;gap:6px;margin-top:8px}
+.badge{font-size:.78rem;font-weight:600;padding:2px 8px;border-radius:var(--radius-s);background:var(--iris-soft);color:var(--iris)}
+.badge.free{background:var(--pine-soft);color:var(--pine)}
+.badge.plain{background:transparent;color:var(--muted);border:1px solid var(--line)}
+.info{font-size:.92rem;margin-top:8px;max-width:64ch}
+.info p{margin:4px 0}
+.info .label{font-weight:600}
+.dl{font-size:.88rem;margin:6px 0 0;padding:0;list-style:none}
+.dl li{margin:2px 0}
+.dl .count{color:var(--amber);font-weight:600}
+.links{display:flex;flex-direction:column;gap:6px;align-self:start}
+.links a{display:block;text-decoration:none;font-size:.92rem;font-weight:600;padding:8px 12px;border-radius:var(--radius-s);border:1px solid var(--line);color:var(--ink);background:var(--bg)}
+.links a.primary{background:var(--iris);border-color:var(--iris);color:var(--surface)}
+.links a small{display:block;font-weight:400;font-size:.76rem;opacity:.85}
+.links a:hover{border-color:var(--iris)}
+.more-btn[hidden]{display:none}
+.more-btn{display:block;margin:16px auto 0;font:inherit;font-weight:600;padding:10px 22px;border-radius:999px;border:2px solid var(--iris);background:var(--surface);color:var(--iris);cursor:pointer}
+.empty{padding:40px 0;color:var(--muted)}
+.empty button{font:inherit;color:var(--iris);background:none;border:0;text-decoration:underline;cursor:pointer;padding:0}
+
+section.block{margin:48px 0 0}
+section.block h2{font-size:1.5rem;margin:0 0 4px}
+section.block > p{color:var(--muted);margin:0 0 14px;max-width:64ch}
+.prog{display:grid;grid-template-columns:240px minmax(0,1fr);gap:4px 24px;padding:14px 0;border-top:1px solid var(--line)}
+.prog h3{margin:0;font-size:1.02rem}
+.prog h3 a{color:var(--ink)}
+.prog .who{color:var(--muted);font-size:.86rem}
+.prog p{margin:0;font-size:.95rem;max-width:66ch}
+section.prose{margin:40px 0 0;max-width:72ch}
+section.prose h2{font-size:1.5rem;margin:0 0 4px}
+section.prose p{margin:6px 0}
+footer{margin:48px 0 0;padding:20px 0 40px;border-top:1px solid var(--line);color:var(--muted);font-size:.86rem}
+footer p{margin:4px 0;max-width:80ch}
+
+@media (max-width:720px){
+  .controls{position:static}
+  .school{grid-template-columns:1fr}
+  .links{flex-direction:row;flex-wrap:wrap}
+  .links a{flex:1 1 140px}
+  .prog{grid-template-columns:1fr}
+  header.top{padding-top:28px}
+}
+@media (prefers-reduced-motion:no-preference){ .rail{scroll-behavior:smooth} }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header class="top">
+    <h1>College Finder for Tennessee Students</h1>
+    <p class="lede">Every U.S. college that takes federal financial aid, with links to apply, financial aid and scholarships, and net-price calculators. Tennessee schools add hand-checked scholarship deadlines and free application periods.</p>
+  </header>
+
+  <div class="rail-head">
+    <h2>Tennessee deadlines coming up</h2>
+    <span id="today"></span>
+  </div>
+  <ol class="rail" id="rail" aria-label="Key dates for Tennessee students"></ol>
+
+  <div class="status" id="status" role="note"></div>
+  <div class="notice" id="notice" role="note" hidden></div>
+
+  <div class="controls" role="search">
+    <div class="searchrow">
+      <div class="search">
+        <label for="q" class="sr">Search schools</label>
+        <input id="q" type="search" placeholder="Search by school, city or state" autocomplete="off">
+      </div>
+      <label for="state" class="sr">State</label>
+      <select id="state"></select>
+      <label for="region" class="sr">Tennessee region</label>
+      <select id="region" hidden>
+        <option value="">All of Tennessee</option>
+        <option value="East">East Tennessee</option>
+        <option value="Middle">Middle Tennessee</option>
+        <option value="West">West Tennessee</option>
+      </select>
+    </div>
+    <div class="types" id="types" role="group" aria-label="School type"></div>
+    <div class="toggles">
+      <label><input type="checkbox" id="f-free"> No application fee</label>
+      <label><input type="checkbox" id="f-ug"> Undergraduate programs</label>
+      <label><input type="checkbox" id="f-hbcu"> HBCU</label>
+      <label><input type="checkbox" id="f-tribal"> Tribal college</label>
+      <label class="tn"><input type="checkbox" id="f-da"> TN Direct Admissions</label>
+      <label class="tn"><input type="checkbox" id="f-promise"> TN Promise eligible</label>
+      <label class="tn"><input type="checkbox" id="f-dates"> Has an upcoming TN deadline</label>
+    </div>
+  </div>
+
+  <div class="resultbar">
+    <p class="resultcount" id="count" aria-live="polite"></p>
+    <label>
+      <span class="sr">Sort by</span>
+      <select id="sort">
+        <option value="name">Sort: name A–Z</option>
+        <option value="tuition">Sort: lowest published tuition for TN residents</option>
+        <option value="state">Sort: state, then name</option>
+      </select>
+    </label>
+  </div>
+  <ul class="list" id="list"></ul>
+  <button type="button" class="more-btn" id="more" hidden>Show more schools</button>
+
+  <section class="block" id="programs">
+    <h2>Aid every Tennessee student should know</h2>
+    <p>These apply across schools. Most of them start with the FAFSA, so file it early.</p>
+    <div id="proglist"></div>
+  </section>
+
+  <section class="prose">
+    <h2>Applying out of state as a Tennessee resident</h2>
+    <p>Out-of-state public universities charge non-resident tuition, which is the price shown for schools outside Tennessee. Many of them offer automatic merit scholarships to non-residents that cut that price a lot, so check the scholarships link for each school.</p>
+    <p>The Academic Common Market lets Tennesseans pay in-state tuition at public colleges in other southern states for certain majors Tennessee doesn’t offer.</p>
+    <p>Other states run their own free application weeks, mostly in October and November. Most of them are limited to that state’s residents, so read the rules before counting on one. The “No application fee” filter shows schools that never charge one. If you have financial need, a Common App, NACAC, ACT or College Board fee waiver covers fees at most schools year-round.</p>
+    <p>HOPE and TN Promise only pay at eligible Tennessee schools.</p>
+  </section>
+
+  <section class="prose">
+    <h2>About the data</h2>
+    <p id="about"></p>
+    <p>The application, financial aid and net-price calculator links come from each college’s own report to the U.S. Department of Education. When a school hasn’t reported one, the button searches that school’s own website instead. “Full profile” opens the federal College Navigator, which lists graduation rates, net price by family income, enrollment and more.</p>
+    <p>Fee waivers, codes and deadlines change every year. Confirm the details on the school’s site before relying on them.</p>
+  </section>
+
+  <footer>
+    <p id="updated"></p>
+    <p>Sources: U.S. Department of Education IPEDS and College Navigator; Tennessee Higher Education Commission (CollegeforTN.org), including its 2025–26 fee-waiver toolkit and the Class of 2027 TN Direct Admissions list; and each school’s website. Not affiliated with any college or government agency.</p>
+  </footer>
+</div>
+
+<script src="site-config.js"></script>
+<script src="data/colleges-data.js"></script>
+<script>
+(function(){
+  const DATA = window.COLLEGES_DATA || { meta:{ mode:"missing" }, rows:[] };
+  const ROWS = DATA.rows;
+  const META = DATA.meta || {};
+  const PAGE = 30;
+
+  const SECTOR = {1:"Public 4-year",2:"Private nonprofit 4-year",3:"For-profit 4-year",4:"Public 2-year",5:"Private nonprofit 2-year",6:"For-profit 2-year",7:"Public technical (under 2 years)",8:"Private nonprofit technical (under 2 years)",9:"For-profit technical (under 2 years)"};
+  const TYPES = [
+    ["", "All types", []], ["pub4", "Public 4-year", [1]], ["pub2", "Community & public 2-year", [4]],
+    ["np", "Private nonprofit", [2,5]], ["tech", "Technical & certificate", [7,8]], ["fp", "For-profit", [3,6,9]]
+  ];
+  const TYPE_SECTORS = Object.fromEntries(TYPES.map(t => [t[0], t[2]]));
+
+  const $ = s => document.querySelector(s);
+  const today = new Date(); today.setHours(0,0,0,0);
+  const parse = iso => { const [y,m,d] = iso.split("-").map(Number); return new Date(y, m-1, d); };
+  const daysUntil = iso => Math.round((parse(iso) - today) / 86400000);
+  const fmt = iso => parse(iso).toLocaleDateString("en-US", { month:"short", day:"numeric", year:"numeric" });
+  const fmtShort = iso => parse(iso).toLocaleDateString("en-US", { month:"short", day:"numeric" });
+  const countText = n => n === 0 ? "today" : n === 1 ? "tomorrow" : n > 0 ? `in ${n} days` : "passed";
+  const money = n => "$" + n.toLocaleString("en-US");
+  const esc = s => String(s ?? "").replace(/[&<>"']/g, c => ({ "&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;","'":"&#39;" }[c]));
+  const stateName = s => (window.STATE_NAMES || {})[s] || s;
+
+  const host = r => { try { return new URL(r.w).hostname.replace(/^www\./, ""); } catch(e) { return null; } };
+  const displayName = r => r.dn || r.n;
+  const siteSearch = (r, words) => {
+    const h = host(r);
+    return h ? `https://www.google.com/search?q=${encodeURIComponent("site:" + h + " " + words)}`
+             : `https://www.google.com/search?q=${encodeURIComponent(displayName(r) + " " + (r.c || "") + " " + words)}`;
+  };
+  const profile = r => /^\d+$/.test(r.id) ? `https://nces.ed.gov/collegenavigator/?id=${r.id}`
+    : `https://nces.ed.gov/collegenavigator/?q=${encodeURIComponent(displayName(r).replace(/^TCAT /, "Tennessee College of Applied Technology-"))}&s=${r.s}`;
+  const noFee = r => r.fee === 0 || r.fs === "none";
+  const upcoming = r => (r.dt || []).filter(d => daysUntil(d[0]) >= 0);
+
+  // ---------- Rail ----------
+  $("#today").textContent = "Today is " + today.toLocaleDateString("en-US", { weekday:"long", month:"long", day:"numeric", year:"numeric" });
+  const rail = $("#rail");
+  let firstUpcoming = null;
+  (window.KEY_DATES || []).forEach(k => {
+    const n = daysUntil(k.date);
+    const li = document.createElement("li");
+    if (n < 0) li.className = "past";
+    else if (!firstUpcoming) { li.className = "next"; firstUpcoming = li; }
+    li.innerHTML = `<a href="${esc(k.url)}" target="_blank" rel="noopener">
+      <div class="when">${fmtShort(k.date)}<span class="count">${countText(n)}</span></div>
+      <div class="what">${esc(k.label)}</div><div class="detail">${esc(k.detail)}</div></a>`;
+    rail.appendChild(li);
+  });
+  if (firstUpcoming) {
+    const prev = firstUpcoming.previousElementSibling;
+    requestAnimationFrame(() => { rail.scrollLeft = prev ? prev.offsetLeft : 0; });
+  }
+
+  // ---------- Status ----------
+  const month = today.getMonth();
+  const nextSept = month >= 9 ? today.getFullYear() + 1 : today.getFullYear();
+  const freeAll = ROWS.filter(noFee).length;
+  const freeTN = ROWS.filter(r => r.s === "TN" && noFee(r)).length;
+  $("#status").innerHTML = month === 8
+    ? `<p><strong>It’s Tennessee’s free-application month.</strong> Dozens of Tennessee colleges waive application fees during September. Check each school and the <a href="https://www.collegefortn.org/tn-college-application-exploration-month/" target="_blank" rel="noopener">CollegeforTN fee-waiver toolkit</a>.</p>`
+    : `<p><strong>Free to apply right now:</strong> ${freeAll.toLocaleString()} schools${META.mode === "national" ? " nationwide" : ""} charge no application fee, including ${freeTN} in Tennessee (every community college and TCAT among them). Seniors who filed the TN Promise application can claim a spot at Tennessee Direct Admissions schools without a fee.</p>
+       <p>Tennessee’s statewide free-application month, when many universities waive fees, is next expected in September ${nextSept}. Need-based fee waivers work year-round.</p>`;
+
+  if (META.mode !== "national") {
+    const n = $("#notice"); n.hidden = false;
+    n.innerHTML = `<p><strong>Showing Tennessee schools only.</strong> The full national list is built automatically when this site is deployed with GitHub Actions. See the README.</p>`;
+  }
+
+  // ---------- Controls ----------
+  const states = [...new Set(ROWS.map(r => r.s).filter(Boolean))].sort((a,b) => stateName(a).localeCompare(stateName(b)));
+  $("#state").innerHTML = `<option value="">All states</option>` + (states.includes("TN") ? `<option value="TN">Tennessee</option>` : "")
+    + states.filter(s => s !== "TN").map(s => `<option value="${s}">${esc(stateName(s))}</option>`).join("");
+
+  const typesEl = $("#types");
+  TYPES.forEach(([val, label]) => {
+    const b = document.createElement("button");
+    b.type = "button"; b.dataset.val = val; b.textContent = label;
+    b.addEventListener("click", () => { state.type = val; sync(); });
+    typesEl.appendChild(b);
+  });
+
+  const DEFAULTS = { q:"", state:"", region:"", type:"", sort:"name", free:false, ug:true, hbcu:false, tribal:false, da:false, promise:false, dates:false };
+  const BOOLS = ["free","ug","hbcu","tribal","da","promise","dates"];
+  const state = { ...DEFAULTS };
+  const params = new URLSearchParams(location.search);
+  Object.keys(state).forEach(k => {
+    if (!params.has(k)) return;
+    state[k] = BOOLS.includes(k) ? params.get(k) === "1" : params.get(k);
+  });
+
+  const inputs = { q:$("#q"), state:$("#state"), region:$("#region"), sort:$("#sort") };
+  BOOLS.forEach(k => inputs[k] = $("#f-" + k));
+  ["q","state","region","sort"].forEach(k => inputs[k].value = state[k]);
+  BOOLS.forEach(k => inputs[k].checked = state[k]);
+
+  let debounce;
+  inputs.q.addEventListener("input", e => { clearTimeout(debounce); debounce = setTimeout(() => { state.q = e.target.value; sync(); }, 120); });
+  inputs.state.addEventListener("change", e => { state.state = e.target.value; if (state.state !== "TN") { state.region = ""; inputs.region.value = ""; } sync(); });
+  inputs.region.addEventListener("change", e => { state.region = e.target.value; sync(); });
+  inputs.sort.addEventListener("change", e => { state.sort = e.target.value; sync(); });
+  BOOLS.forEach(k => inputs[k].addEventListener("change", e => { state[k] = e.target.checked; sync(); }));
+
+  function writeURL(){
+    const p = new URLSearchParams();
+    Object.entries(state).forEach(([k,v]) => {
+      if (v === DEFAULTS[k]) return;
+      p.set(k, typeof v === "boolean" ? (v ? "1" : "0") : v);
+    });
+    const qs = p.toString();
+    history.replaceState(null, "", qs ? "?" + qs : location.pathname);
+  }
+
+  // ---------- Search ----------
+  ROWS.forEach(r => {
+    r._hay = [r.n, r.dn, r.al, r.sh, r.c, r.s, stateName(r.s), SECTOR[r.t], r.fa, r.no,
+      r.h ? "HBCU historically Black" : "", r.tr ? "tribal college" : "", host(r)].join(" ").toLowerCase();
+    r._name = displayName(r).toLowerCase();
+  });
+
+  function matches(r){
+    if (state.state && r.s !== state.state) return false;
+    if (state.region && r.r !== state.region) return false;
+    if (state.type && !TYPE_SECTORS[state.type].includes(r.t)) return false;
+    if (state.free && !noFee(r)) return false;
+    if (state.ug && r.ug === 0) return false;
+    if (state.hbcu && !r.h) return false;
+    if (state.tribal && !r.tr) return false;
+    if (state.da && !r.da) return false;
+    if (state.promise && !r.pr) return false;
+    if (state.dates && !upcoming(r).length) return false;
+    const words = state.q.toLowerCase().trim().split(/\s+/).filter(Boolean);
+    return words.every(w => r._hay.includes(w));
+  }
+
+  const sorters = {
+    name: (a,b) => a._name.localeCompare(b._name),
+    state: (a,b) => stateName(a.s).localeCompare(stateName(b.s)) || a._name.localeCompare(b._name),
+    tuition: (a,b) => (a.tu ?? Infinity) - (b.tu ?? Infinity) || a._name.localeCompare(b._name)
+  };
+
+  function card(r){
+    const b = [];
+    if (noFee(r)) b.push(`<span class="badge free">No application fee</span>`);
+    else if (r.fee > 0) b.push(`<span class="badge plain">Application fee ${money(r.fee)}</span>`);
+    if (r.fs === "sept2026") b.push(`<span class="badge plain">Free app window Sept. 2026, closed</span>`);
+    if (r.fs === "toolkit2025") b.push(`<span class="badge plain">On TN Sept. 2025 free-app list</span>`);
+    if (r.h) b.push(`<span class="badge">HBCU</span>`);
+    if (r.tr) b.push(`<span class="badge">Tribal college</span>`);
+    if (r.da) b.push(`<span class="badge">TN Direct Admissions</span>`);
+    if (r.pr) b.push(`<span class="badge">TN Promise</span>`);
+    if (r.ug === 0) b.push(`<span class="badge plain">Graduate programs only</span>`);
+
+    const up = upcoming(r);
+    const dates = up.length ? `<ul class="dl">${up.map(d => `<li><strong>${fmt(d[0])}</strong> ${esc(d[1])} <span class="count">${countText(daysUntil(d[0]))}</span></li>`).join("")}</ul>` : "";
+    const tuition = r.tu ? `<p><span class="label">Published tuition &amp; fees for a TN resident${META.tuitionYear && META.tuitionYear !== "latest" ? ` (${esc(META.tuitionYear)})` : ""}:</span> ${money(r.tu)} a year${r.tus === "out" ? ", out-of-state rate" : ""}. Before scholarships and aid.</p>` : "";
+
+    const schol = r.sc ? `<a class="primary" href="${esc(r.sc)}" target="_blank" rel="noopener">Scholarships<small>Official page</small></a>`
+      : r.f ? `<a class="primary" href="${esc(r.f)}" target="_blank" rel="noopener">Financial aid &amp; scholarships<small>School’s aid office</small></a>`
+      : `<a class="primary" href="${esc(siteSearch(r, "scholarships freshmen"))}" target="_blank" rel="noopener">Scholarships<small>Search their site</small></a>`;
+    const apply = r.a ? `<a href="${esc(r.a)}" target="_blank" rel="noopener">Apply<small>Admissions page</small></a>`
+      : `<a href="${esc(siteSearch(r, "apply admissions"))}" target="_blank" rel="noopener">Apply<small>Search their site</small></a>`;
+    const npc = r.np ? `<a href="${esc(r.np)}" target="_blank" rel="noopener">Net price calculator<small>Estimate your real cost</small></a>` : "";
+    const h = host(r);
+
+    return `<li class="school">
+      <div>
+        <h3>${esc(displayName(r))}${r.sh && r.sh !== displayName(r) ? ` (${esc(r.sh)})` : ""}</h3>
+        <div class="meta">${esc(SECTOR[r.t] || "College")} in ${esc(r.c || "")}${r.c ? ", " : ""}${esc(stateName(r.s))}${r.r ? ` (${esc(r.r)} TN)` : ""}${h ? ` <a href="${esc(r.w)}" target="_blank" rel="noopener">${esc(h)}</a>` : ""}</div>
+        <div class="badges">${b.join("")}</div>
+        <div class="info">
+          ${r.fa ? `<p><span class="label">Applying free:</span> ${esc(r.fa)}</p>` : ""}
+          ${tuition}
+          ${r.no ? `<p>${esc(r.no)}</p>` : ""}
+          ${dates}
+          ${r.f && !r.sc ? `<p><a href="${esc(siteSearch(r, "scholarships freshmen"))}" target="_blank" rel="noopener">Search ${esc(h || "their site")} for scholarships</a></p>` : ""}
+        </div>
+      </div>
+      <nav class="links" aria-label="${esc(displayName(r))} links">
+        ${schol}${apply}${npc}
+        <a href="${esc(profile(r))}" target="_blank" rel="noopener">Full profile<small>College Navigator</small></a>
+      </nav>
+    </li>`;
+  }
+
+  let results = [], shown = 0;
+  function render(reset = true){
+    if (reset) {
+      results = ROWS.filter(matches).sort(sorters[state.sort] || sorters.name);
+      shown = 0;
+      $("#list").innerHTML = "";
+    }
+    const next = results.slice(shown, shown + PAGE);
+    shown += next.length;
+    $("#count").textContent = results.length
+      ? `Showing ${shown.toLocaleString()} of ${results.length.toLocaleString()} matching schools (${ROWS.length.toLocaleString()} total)`
+      : "";
+    if (!results.length) {
+      $("#list").innerHTML = `<li class="empty">No schools match those filters. <button type="button" id="clear">Clear all filters</button></li>`;
+      $("#clear").addEventListener("click", () => {
+        Object.assign(state, DEFAULTS);
+        ["q","state","region","sort"].forEach(k => inputs[k].value = state[k]);
+        BOOLS.forEach(k => inputs[k].checked = state[k]);
+        sync();
+      });
+    } else {
+      $("#list").insertAdjacentHTML("beforeend", next.map(card).join(""));
+    }
+    $("#more").hidden = shown >= results.length;
+    $("#more").textContent = `Show ${Math.min(PAGE, results.length - shown)} more`;
+    $("#region").hidden = state.state !== "TN";
+    typesEl.querySelectorAll("button").forEach(b => b.setAttribute("aria-pressed", String(b.dataset.val === state.type)));
+  }
+  $("#more").addEventListener("click", () => render(false));
+  function sync(){ render(true); writeURL(); }
+
+  // ---------- Programs, about, footer ----------
+  $("#proglist").innerHTML = (window.PROGRAMS || []).map(p => `<div class="prog">
+      <div><h3><a href="${esc(p.url)}" target="_blank" rel="noopener">${esc(p.name)}</a></h3><div class="who">${esc(p.who)}</div></div>
+      <p>${esc(p.what)}</p></div>`).join("");
+
+  $("#about").textContent = META.source === "IPEDS"
+    ? `The national list comes from the U.S. Department of Education’s IPEDS ${META.hdYear} directory: every active college that participates in federal student aid. Application fees are from IPEDS ${META.feeYear || ""}${META.tuitionYear ? ` and tuition from ${META.tuitionYear}` : ""}.`
+    : META.source === "College Scorecard"
+    ? "The national list comes from the U.S. Department of Education’s College Scorecard."
+    : "Tennessee schools come from a hand-checked list. The national list appears after the first automatic build.";
+  $("#updated").textContent = `Data built ${META.built ? fmt(META.built) : "recently"}; Tennessee details last checked ${META.overlayUpdated ? fmt(META.overlayUpdated) : "recently"}.`;
+
+  render(true);
+})();
+</script>
+</body>
+</html>
