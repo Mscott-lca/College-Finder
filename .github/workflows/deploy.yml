@@ -1,0 +1,69 @@
+name: Build data and publish site
+
+# Runs when you push changes, when you click "Run workflow",
+# and on the 1st of each month to pick up new federal data.
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+  schedule:
+    - cron: "0 12 1 * *"
+
+permissions:
+  contents: write   # save the refreshed data file back to the repo
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Build the national college list
+        id: data
+        continue-on-error: true
+        env:
+          SCORECARD_API_KEY: ${{ secrets.SCORECARD_API_KEY }}
+        run: python scripts/build_data.py
+
+      - name: Warn if the federal data could not be downloaded
+        if: steps.data.outcome == 'failure'
+        run: echo "::warning::Could not download new college data, so the last saved copy was published. See README > Troubleshooting."
+
+      - name: Save the refreshed data file
+        if: steps.data.outcome == 'success'
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/colleges-data.js
+          if git diff --cached --quiet; then
+            echo "Data unchanged."
+          else
+            git commit -m "Refresh college data [skip ci]"
+            git push || echo "::warning::Could not push the data file (branch protection?). The site still publishes."
+          fi
+
+      - uses: actions/configure-pages@v5
+
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: .
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4
